@@ -1,0 +1,244 @@
+:root {
+    /* Couleur principale des dés */
+    --alea-yellow: #F5C33B;
+    --alea-yellow-light: #FFD96E;
+    --alea-yellow-dark: #C4972E;
+    /* Couleur du point rouge */
+    --alea-red: #E74C3C;
+    --alea-red-light: #FF7666;
+    --alea-red-dark: #B93528;
+    /* Couleur du texte et des contours */
+    --alea-dark: #1F2A44;
+    --alea-dark-light: #3C4A66;
+    --alea-dark-dark: #101624;
+    /* Couleur de fond */
+    --alea-light: #FAF6EC;
+    --alea-light-dark: #E6E0D2;
+    --alea-light-light: #FFFFFF;
+    
+    /* Variables de layout */
+    --max-width: 1200px;
+    --border-radius: 16px;
+    --border-radius-sm: 8px;
+    --shadow: 0 8px 32px rgba(31, 42, 68, 0.12);
+    --shadow-hover: 0 12px 48px rgba(31, 42, 68, 0.18);
+    --shadow-intense: 0 20px 60px rgba(31, 42, 68, 0.25);
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 4rem;
+}
+
+/* Configuration globale */
+.reveal {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--alea-light);
+}
+
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal .slides > section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Titres */
+.reveal h1 {
+    color: var(--alea-yellow);
+    font-size: 2.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(31, 42, 68, 0.2);
+}
+
+.reveal h2 {
+    color: var(--alea-dark);
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 3px solid var(--alea-yellow);
+    padding-bottom: 0.3em;
+}
+
+.reveal h3 {
+    color: var(--alea-dark-light);
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Texte */
+.reveal p {
+    color: var(--alea-dark);
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+}
+
+.reveal strong {
+    color: var(--alea-red);
+    font-weight: 600;
+}
+
+.reveal em {
+    color: var(--alea-yellow-dark);
+    font-style: italic;
+}
+
+.reveal small {
+    color: var(--alea-dark-light);
+}
+
+/* Listes */
+.reveal ul,
+.reveal ol {
+    color: var(--alea-dark);
+    font-size: 0.85em;
+    line-height: 1.6;
+    margin-left: var(--spacing-md);
+}
+
+.reveal ul li,
+.reveal ol li {
+    margin-bottom: 0.3em;
+}
+
+.reveal ul li::marker {
+    color: var(--alea-yellow);
+}
+
+.reveal ol li::marker {
+    color: var(--alea-yellow);
+    font-weight: 600;
+}
+
+/* Tableaux */
+.reveal table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: var(--spacing-md) 0;
+    background-color: var(--alea-light-light);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.reveal table thead {
+    background-color: var(--alea-yellow);
+}
+
+.reveal table thead th {
+    color: var(--alea-dark);
+    font-weight: 600;
+    padding: var(--spacing-sm);
+    text-align: left;
+}
+
+.reveal table tbody td {
+    color: var(--alea-dark);
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--alea-light-dark);
+}
+
+.reveal table tbody tr:hover {
+    background-color: var(--alea-light);
+}
+
+/* Code */
+.reveal code {
+    background-color: var(--alea-dark);
+    color: var(--alea-yellow);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Slide de couverture */
+.reveal section:first-child h1 {
+    font-size: 3em;
+    margin-bottom: var(--spacing-md);
+}
+
+.reveal section:first-child h3 {
+    color: var(--alea-yellow-dark);
+    font-size: 1.4em;
+    margin-bottom: var(--spacing-sm);
+}
+
+.reveal section:first-child p {
+    font-size: 1em;
+}
+
+/* Numérotation des slides */
+.reveal .slide-number {
+    background-color: var(--alea-yellow);
+    color: var(--alea-dark);
+    font-weight: 600;
+    padding: 0.5em 0.8em;
+    border-radius: var(--border-radius-sm);
+}
+
+/* Contrôles */
+.reveal .controls {
+    color: var(--alea-yellow);
+}
+
+.reveal .controls button {
+    color: var(--alea-yellow);
+}
+
+.reveal .controls button:hover {
+    color: var(--alea-yellow-dark);
+}
+
+/* Barre de progression */
+.reveal .progress {
+    background: var(--alea-light-dark);
+    height: 6px;
+}
+
+.reveal .progress span {
+    background: var(--alea-yellow);
+}
+
+/* Espacement vertical */
+.reveal .slides > section {
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+/* Sections imbriquées */
+.reveal .slides section .slides section {
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+/* Animations douces */
+.reveal section {
+    transition: transform 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reveal h1 {
+        font-size: 2.5em;
+    }
+    
+    .reveal h2 {
+        font-size: 2em;
+    }
+    
+    .reveal h3 {
+        font-size: 1.5em;
+    }
+    
+    .reveal p,
+    .reveal ul,
+    .reveal ol {
+        font-size: 1em;
+    }
+}

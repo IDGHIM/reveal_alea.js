@@ -1,40 +1,1319 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aléa - Présentation Titre Professionnel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1 : Couverture -->
+            <section>
+                <h1>ALÉA</h1>
+                <h3>Application de Quiz Interactive et Accessible</h3>
+                <p><strong>Présenté par :</strong> DGHIM Ichem </p>
+                <p><strong>Organisme :</strong> AFEC - Agen</p>
+                <p><small>Titre Professionnel - Développeur Web et Web Mobile</small></p>
+                <p><small>2025</small></p>
+            </section>
 
-		<title>reveal.js</title>
+            <!-- Slide 2 : Présentation & Contexte -->
+            <section>
+                <h2>Présentation & Contexte</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <h3>Développeur</h3>
+                        <ul>
+                            <li>Développeur web junior</li>
+                            <li>Formation AFEC</li>
+                            <li>Spécialisations : React, Node.js, Accessibilité</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Genèse du Projet</h3>
+                        <ul>
+                            <li><strong>V1 :</strong> Quiz powerlifting</li>
+                            <li><strong>V2 :</strong> Plateforme générique</li>
+                            <li><strong>+</strong> Admin & Accessibilité</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+            <!-- Slide 3 : Expression des Besoins -->
+            <section>
+                <h2>Expression des Besoins</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <h3>🎯 UX Fluide</h3>
+                        <p>Interface React moderne et responsive</p>
+                    </div>
+                    <div>
+                        <h3>🔒 Sécurité</h3>
+                        <p>JWT, RBAC, protection données</p>
+                    </div>
+                    <div>
+                        <h3>♿ Accessible</h3>
+                        <p>WCAG 2.1 niveau AA</p>
+                    </div>
+                    <div>
+                        <h3>📈 Évolutif</h3>
+                        <p>Architecture modulaire</p>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Visiteur</th>
+                            <th>User</th>
+                            <th>Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Découvrir</td>
+                            <td>Quiz + Résultats</td>
+                            <td>CRUD complet</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+            <!-- Slide 4 : Maquettes -->
+            <section>
+                <h2>Conception - Maquette FIGMA</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <h3>Accueil</h3>
+                        <div style="border: 2px solid var(--alea-yellow); padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/maquette-alea.png" alt="Maquette de l'application Aléa">
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Interface Quiz</h3>
+                        <div style="border: 2px solid var(--alea-yellow); padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/maquette-questionnaire-alea.png" alt="Maquette du questionnaire Aléa">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+            <!-- Slide 5 : Schéma de Navigation -->
+            <section>
+                <h2>Schéma de Navigation</h2>
+                <div style="text-align: center; padding: 2rem;">
+                    <pre style="color: var(--alea-yellow); font-size: 0.8em; text-align: left; display: inline-block;">
+Accueil → Login → Dashboard → Quiz → Résultats
+                      ↓
+                  Admin Panel
+                      ↓
+        ┌─────────────┼─────────────┐
+    Users         Quizzes       Questions
+                    </pre>
+                </div>
+            </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+            <!-- Slide 6 : Architecture Technique -->
+            <section>
+                <h2>Architecture Technique</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <h3>Front-end</h3>
+                        <ul>
+                            <li>React 18.2.0</li>
+                            <li>React Router 6</li>
+                            <li>Axios 1.x</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Back-end</h3>
+                        <ul>
+                            <li>Node.js 18.x</li>
+                            <li>Express 4.18</li>
+                            <li>MongoDB 6.x</li>
+                            <li>JWT 9.x</li>
+                            <li>Bcrypt 5.x</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1.5rem;"><strong>User → React → API → MongoDB</strong></p>
+            </section>
+
+            <!-- Slide 7 : Interface Quiz - Desktop & Mobile -->
+            <section>
+                <h2>Réalisation Front - Interface Quiz</h2>
+                <div style="display: grid; grid-template-columns: 45% 35%; gap: 2.5rem;">
+                    <div>
+                        <h3>Desktop</h3>
+                        <div style="border: 2px solid var(--alea-yellow); padding: 1.0rem; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                            [Screenshot Desktop]
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Mobile</h3>
+                        <div style="border: 2px solid var(--alea-yellow); padding: 1.0rem; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                            [Screenshot Mobile]
+                        </div>
+                    </div>
+                    <p><strong>Points clés :</strong> Navigation fluide, Progress bar, Responsive design</p>
+                </div>
+            </section>
+
+            <!-- Slide 8 : Code Front - Structure JSX -->
+            <section>
+                <h2>Code Front - Structure JSX (Statique)</h2>
+                <pre><code class="language-jsx">// QuizPage.jsx - Structure JSX (Statique)
+return (
+  &lt;div className=&quot;quiz-container&quot;&gt;
+    &lt;div className=&quot;quiz-header&quot;&gt;
+      &lt;div className=&quot;progress-section&quot;&gt;
+        &lt;div className=&quot;question-counter&quot;&gt;
+          Question {currentQuestionIndex + 1} / {totalQuestions}
+        &lt;/div&gt;
+        &lt;div className=&quot;progress-bar&quot;&gt;
+          &lt;div className=&quot;progress-fill&quot;
+            style={{width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%`}}
+          &gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;score-display-mini&quot;&gt;
+        {score}/{totalQuestions}
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div className=&quot;quiz-content&quot;&gt;
+      &lt;div className=&quot;question-card&quot;&gt;
+        &lt;h2 className=&quot;question-text&quot;&gt;{currentQuestion.question}&lt;/h2&gt;
+        
+        &lt;div className=&quot;options-container&quot;&gt;
+          {[&quot;A&quot;, &quot;B&quot;, &quot;C&quot;].map((option) =&gt; (
+            &lt;button key={option} 
+              className={`option-btn ${selectedAnswers.includes(option) ? 'selected' : ''}`}
+              onClick={() =&gt; handleAnswerSelection(option)}
+            &gt;
+              &lt;span className=&quot;option-letter&quot;&gt;{option}&lt;/span&gt;
+              &lt;span className=&quot;option-text&quot;&gt;
+                {currentQuestion[`option${option}`]}
+              &lt;/span&gt;
+            &lt;/button&gt;
+          ))}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+                </code></pre>
+                <p><strong>Sécurité :</strong> Échappement XSS automatique avec React</p>
+            </section>
+
+            <!-- Slide 9 : Code Front - Logique React -->
+            <section>
+                <h2>Code Front - Logique React (Dynamique)</h2>
+                <pre><code class="language-jsx">// QuizPage.jsx - Logique React (Dynamique)
+// &Eacute;tats du composant
+const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+const [score, setScore] = useState(0);
+const [showResult, setShowResult] = useState(false);
+const [quizStarted, setQuizStarted] = useState(false);
+const [answers, setAnswers] = useState([]);
+const [selectedAnswers, setSelectedAnswers] = useState([]);
+
+// G&egrave;re la s&eacute;lection d'une r&eacute;ponse
+const handleAnswerSelection = (answer) =&gt; {
+  const isMultipleChoice = currentQuestion.correctAnswers?.length &gt; 1;
+  
+  if (isMultipleChoice) {
+    setSelectedAnswers(prev =&gt; 
+      prev.includes(answer) 
+        ? prev.filter(a =&gt; a !== answer) 
+        : [...prev, answer]
+    );
+  } else {
+    setSelectedAnswers([answer]);
+    setTimeout(() =&gt; submitAnswer([answer]), 500);
+  }
+};
+
+// Valide les r&eacute;ponses et calcule le score
+const submitAnswer = (answersToSubmit = selectedAnswers) =&gt; {
+  let isCorrect = false;
+  let correctAnswersTexts = currentQuestion.correctAnswers || [];
+  let selectedTexts = answersToSubmit.map(ans =&gt; 
+    currentQuestion[`option${ans}`]
+  );
+  
+  // V&eacute;rification de la correction
+  const selectedSet = new Set(selectedTexts);
+  const correctSet = new Set(correctAnswersTexts);
+  
+  isCorrect = selectedSet.size === correctSet.size &amp;&amp;
+              [...selectedSet].every(text =&gt; correctSet.has(text));
+  
+  if (isCorrect) setScore(s =&gt; s + 1);
+
+  // Enregistre la r&eacute;ponse
+  setAnswers(a =&gt; [...a, {
+    questionId: currentQuestion.id,
+    selectedAnswers: answersToSubmit,
+    isCorrect
+  }]);
+
+  setSelectedAnswers([]);
+
+  // Passe &agrave; la question suivante ou affiche les r&eacute;sultats
+  if (currentQuestionIndex &lt; totalQuestions - 1) {
+    setCurrentQuestionIndex(i =&gt; i + 1);
+  } else {
+    setShowResult(true);
+  }
+};
+                </code></pre>
+                <p><strong>Argumentaire :</strong> Gestion d'état avec hooks, appel API sécurisé</p>
+            </section>
+
+            <!-- Slide 10 : Menu Accessibilité -->
+            <section>
+              <h2>Menu Accessibilité (WCAG 2.1 AA)</h2>
+              <div style="border: 2px solid var(--alea-yellow); padding: 1rem; margin-top: 1rem; text-align: center;">
+                <img src="images/menu-accessibilite.png" alt="Menu d'accessibilité" style="max-width: 100%; height: auto;">
+              </div>
+            </section>
+
+            <!-- Slide 11 : Interface Admin -->
+            <section>
+                <h2>Interface Administration ( UTILISATEURS )</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <div style="border: 2px solid var(--alea-yellow); padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/panel-admin-user.png" alt="Panel admin utilisateurs">
+                        </div>
+                    </div>
+                    <div>
+                        <div style="border: 2px solid var(--alea-yellow); padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/panel-admin-gestion-user.png" alt="Panel admin gestion utilisateur">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Interface Administration ( QUESTIONS )</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <div style="border: 2px solid var(--alea-yellow); padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/panel-admin-questions.png" alt="Panel admin questions">
+                        </div>
+                    </div>
+                    <div>
+                        <div style="border: 2px solid var(--alea-yellow); padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/panel-admin-creation-quiz.png" alt="Panel admin création de quiz">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           <!-- Slide 12 : Schéma de Base de Données -->
+<section>
+    <h2>Schéma de Base de Données</h2>
+    
+    <!-- Modèle Conceptuel MCD -->
+    <div style="background: var(--alea-dark); border-radius: var(--border-radius-sm); padding: 1rem; margin-bottom: 0.8rem;">
+        <pre style="color: var(--alea-yellow); font-size: 0.65em; text-align: center; margin: 0; line-height: 1.3; font-family: monospace;">
+┌─────────┐          ┌─────────┐          ┌────────────┐
+│  USER   │──(crée)─→│  QUIZ   │─(contient)→│  QUESTION  │
+│  (1,n)  │          │  (1,n)  │          │     (n)    │
+└─────────┘          └─────────┘          └────────────┘
+        </pre>
+    </div>
+
+    <!-- Structure MongoDB -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; font-size: 0.6em;">
+        
+        <!-- Collection Users -->
+        <div style="background: var(--alea-light-light); border-radius: var(--border-radius-sm); padding: 0.8rem; border: 2px solid var(--alea-yellow);">
+            <h3 style="color: var(--alea-yellow); margin: 0 0 0.4rem 0; font-size: 1.1em;">👤 USERS</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
+                <li><strong>_id</strong> : ObjectId</li>
+                <li><strong>username</strong> : String</li>
+                <li><strong>email</strong> : String</li>
+                <li><strong>password</strong> : Hash</li>
+                <li><strong>role</strong> : user/admin</li>
+            </ul>
+        </div>
+
+        <!-- Collection Quizzes -->
+        <div style="background: var(--alea-light-light); border-radius: var(--border-radius-sm); padding: 0.8rem; border: 2px solid var(--alea-red);">
+            <h3 style="color: var(--alea-red); margin: 0 0 0.4rem 0; font-size: 1.1em;">📋 QUIZZES</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
+                <li><strong>_id</strong> : ObjectId</li>
+                <li><strong>title</strong> : String</li>
+                <li><strong>category</strong> : String</li>
+                <li><strong>questions[]</strong> : Ref</li>
+                <li><strong>createdBy</strong> : Ref User</li>
+                <li><strong>isPublished</strong> : Boolean</li>
+            </ul>
+        </div>
+
+        <!-- Collection Questions -->
+        <div style="background: var(--alea-light-light); border-radius: var(--border-radius-sm); padding: 0.8rem; border: 2px solid var(--alea-dark-light);">
+            <h3 style="color: var(--alea-dark-light); margin: 0 0 0.4rem 0; font-size: 1.1em;">❓ QUESTIONS</h3>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
+                <li><strong>_id</strong> : ObjectId</li>
+                <li><strong>text</strong> : String</li>
+                <li><strong>options[]</strong> : Array</li>
+                <li><strong>correctAnswer</strong> : String</li>
+                <li><strong>category</strong> : String</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Relations explicites -->
+    <div style="margin-top: 0.8rem; font-size: 0.6em; text-align: center;">
+        <p style="margin: 0;"><strong>Relations :</strong> 
+            <span style="color: var(--alea-yellow);">User</span> → 
+            <span style="color: var(--alea-red);">Quiz.createdBy</span> | 
+            <span style="color: var(--alea-red);">Quiz.questions[]</span> → 
+            <span style="color: var(--alea-dark-light);">Question._id</span>
+        </p>
+    </div>
+</section>
+
+            <!-- Slide 13 : Code Back - Modèle -->
+            <section>
+                <h2>Code Back - Modèle (Accès Données)</h2>
+                <pre style="font-size: 0.55em;"><code class="language-javascript">// models/Quiz.js
+const mongoose = require('mongoose');
+
+// Définition du schéma pour les quiz
+const QuizSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  description: { type: String, required: false },
+  category: { type: String, required: true },
+  createdBy: { type: String, required: true }, 
+  isAutoGenerated: { type: Boolean, default: false },
+  questionsCount: { type: Number, default: 0 } 
+}, {
+  timestamps: true 
+});
+
+const Quiz = mongoose.model('Quiz', QuizSchema);
+
+module.exports = Quiz;
+</code></pre>
+            </section>
+
+            <!-- Slide 14 : Code Back - Controller -->
+            <section>
+                <h2>Code Back - Controller (Métier)</h2>
+                <pre style="font-size: 0.5em;"><code class="language-javascript">// controllers/authController.js
+const User = require("../models/Users");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+const dotenv = require("dotenv");
+dotenv.config();
+const sendMail = require("../utils/sendEmail");
+const crypto = require("crypto");
+
+const JWT_SECRET = process.env.JWT_SECRET;
+const CLIENT_URL = process.env.CLIENT_URL;
+
+// Fonction pour s'enregistrer
+async function register(req, res) {
+  try {
+    const { username, email, password, confirmPassword } = req.body;
+
+    if (!username || !email || !password || !confirmPassword) {
+      return res
+        .status(400)
+        .json({ message: `Tous les champs sont obligatoires` });
+    }
+
+    if (password != confirmPassword) {
+      return res
+        .status(400)
+        .json({ message: `Les mots de passe doivent être identiques` });
+    }
+
+    // Vérifier aussi si le username existe
+    const emailExists = await User.findOne({ email });
+    if (emailExists) {
+      return res.status(400).json({ message: `Email est déjà utilisé` });
+    }
+
+    const usernameExists = await User.findOne({ username });
+    if (usernameExists) {
+      return res.status(400).json({ message: `Nom d'utilisateur est déjà utilisé` });
+    }
+
+    // Hasher le mot de passe
+    const hashedPassword = await bcrypt.hash(password, 12);
+
+    const newUser = new User({
+      username,
+      email,
+      password: hashedPassword,
+      role: "user",
+      isVerified: false,
+    });
+
+    await newUser.save();
+
+    // Génération du token de vérification par email qui expire au bout d'une heure
+    const verificationToken = jwt.sign({ id: newUser._id }, JWT_SECRET, {
+      expiresIn: "1h",
+    });
+
+    const verificationUrl = `http://localhost:5173/api/verify/${verificationToken}`;
+
+    await sendMail({
+      to: newUser.email,
+      subject: "Vérification email",
+      html: `Bonjour ${username}, <br>. Merci de vérifier votre compte en cliquant sur ce lien : <a href="${verificationUrl}"> Vérifier mon compte</a> <br> Ce lien expire dans une heure`,
+    });
+
+    return res.status(201).json({
+      message: `Utilisateur créé avec succès. Veuillez vérifier votre email`,
+    });
+  } catch (error) {
+    console.error(`Erreur lors de l'enregistrement`, error);
+    res.status(500).json({ message: `Impossible de s'enregistrer` });
+  }
+}
+
+// Connexion au compte
+async function login(req, res) {
+  console.log("Requête login reçue:", req.body);
+  try {
+    const { identifier, password } = req.body;
+    if (!identifier || !password) {
+      console.log("Champs manquants");
+      return res.status(400).json({ message: `Tous les champs sont requis` });
+    }
+
+    // Recherche améliorée par email OU username
+    let user = await User.findOne({
+      $or: [{ email: identifier }, { username: identifier }]
+    });
+    
+    console.log("Utilisateur trouvé :", user ? 'OUI' : 'NON');
+
+    if (!user) {
+      console.log("Utilisateur introuvable");
+      return res.status(401).json({ message: `Identifiants incorrects` });
+    }
+
+    if (!user.password) {
+      console.log("Mot de passe manquant en DB");
+      return res.status(400).json({ message: "Mot de passe manquant." });
+    }
+
+    if (!user.isVerified) {
+      console.log("Compte non vérifié");
+      return res
+        .status(401)
+        .json({ message: `Veuillez confirmer votre compte` });
+    }
+
+    console.log("Vérification du mot de passe...");
+    const isMatch = await bcrypt.compare(password, user.password);
+    console.log("Mot de passe valide :", isMatch);
+
+    if (!isMatch) {
+      console.log("Mot de passe incorrect");
+      return res
+        .status(401)
+        .json({ message: `Identifiants incorrects` });
+    }
+
+    console.log("Connexion réussie pour:", user.username);
+
+    // Création du token. Expiration de la session au bout d'une heure
+    const token = jwt.sign(
+      { id: user._id, role: user.role, name: user.username },
+      JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+
+    // Envoi du token dans les cookies
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 jours
+    });
+
+    res.json({
+      message: `Connexion réussie`,
+      user: {
+        id: user._id,
+        role: user.role,
+        username: user.username,
+        email: user.email,
+      },
+      token,
+    });
+  } catch (error) {
+    console.error("Erreur login:", error);
+    res.status(500).json({ message: `Erreur serveur` });
+  }
+}
+
+// Fonction me
+const me = async (req, res) => {
+  try {
+    // Récupérer l'utilisateur depuis la base de données
+    const user = await User.findById(req.user.id).select('-password -resetToken -resetTokenExpiration');
+    
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "Utilisateur non trouvé"
+      });
+    }
+
+    // Retourner les informations de l'utilisateur
+    res.status(200).json({
+      success: true,
+      message: "Informations utilisateur récupérées avec succès",
+      data: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        role: user.role,
+        isVerified: user.isVerified,
+        createdAt: user.createdAt,
+        updatedAt: user.updatedAt
+      }
+    });
+
+  } catch (error) {
+    console.error("Erreur lors de la récupération de l'utilisateur:", error);
+    res.status(500).json({
+      success: false,
+      message: "Erreur serveur lors de la récupération des informations utilisateur",
+      error: error.message
+    });
+  }
+};
+
+// Fonction de reset du password - DEMANDE
+async function requestPasswordReset(req, res) {
+  const { email } = req.body;
+
+  if (!email)
+    return res
+      .status(400)
+      .json({ message: `Tous les champs sont obligatoires` });
+  try {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      // SÉCURITÉ: Ne pas révéler si l'email existe ou non
+      return res.json({ message: `Si cet email existe, un lien de réinitialisation a été envoyé` });
+    }
+
+    console.log('Génération du token de réinitialisation pour:', email);
+    
+    // Génération du token original (celui qui sera dans l'URL/email)
+    const resetToken = crypto.randomBytes(32).toString("hex");
+    console.log('Token original généré:', resetToken);
+    
+    // Hash du token (celui qui sera stocké en DB)
+    const resetTokenHash = crypto
+      .createHash("sha256")
+      .update(resetToken)
+      .digest("hex");
+    console.log('Token hashé (pour DB):', resetTokenHash);
+
+    // Stockage en DB
+    user.resetToken = resetTokenHash;
+    user.resetTokenExpiration = Date.now() + 3600000; // 1h
+    await user.save();
+    
+    console.log('Token hashé sauvegardé en DB pour:', user.email);
+
+    // URL avec le token ORIGINAL (non hashé)
+    const resetUrl = `${CLIENT_URL}/reset-password/${resetToken}`;
+    console.log('URL générée:', resetUrl);
+
+    await sendMail({
+      to: user.email,
+      subject: `Réinitialisation du mot de passe`,
+      html: `Bonjour ${user.username},<br><br>Vous avez demandé une réinitialisation de votre mot de passe.<br><br>Cliquez sur ce lien pour créer un nouveau mot de passe : <a href="${resetUrl}">Réinitialiser mon mot de passe</a><br><br>Ce lien expire dans 1 heure.<br><br>Si vous n'avez pas demandé cette réinitialisation, ignorez ce message.`,
+    });
+
+    console.log('Email envoyé avec succès');
+    
+    res.json({ message: `Si cet email existe, un lien de réinitialisation a été envoyé` });
+  } catch (error) {
+    console.error('Erreur lors de la génération du token:', error);
+    res.status(500).json({ message: `Erreur lors de l'envoi de l'email` });
+  }
+}
+
+// Fonction de reset du password - EXECUTION
+async function resetPassword(req, res) {
+  console.log('===== DEBUG RESET PASSWORD =====');
+  console.log('Params reçus:', req.params);
+  console.log('Body reçu:', req.body);
+  
+  // CORRECTION: Récupérer le token depuis req.params (URL) au lieu de req.body
+  const { token } = req.params;
+  const { password, newPassword, confirmPassword } = req.body;
+  
+  console.log('Token depuis URL:', token ? token.substring(0, 20) + '...' : 'Absent');
+  console.log('Password:', password ? 'Présent' : 'Absent');
+  console.log('NewPassword:', newPassword ? 'Présent' : 'Absent');
+  console.log('ConfirmPassword:', confirmPassword ? 'Présent' : 'Absent');
+
+  // Utiliser soit 'password' soit 'newPassword' (compatibilité)
+  const actualPassword = password || newPassword;
+
+  if (!token) {
+    console.log('Token manquant dans l\'URL');
+    return res.status(400).json({ message: `Token requis` });
+  }
+
+  if (!actualPassword || !confirmPassword) {
+    console.log('Mot de passe ou confirmation manquant');
+    return res.status(400).json({ message: `Tous les champs sont obligatoires` });
+  }
+
+  if (actualPassword !== confirmPassword) {
+    console.log('Mots de passe ne correspondent pas');
+    return res.status(400).json({ message: `Les mots de passe ne sont pas identiques` });
+  }
+
+  // Validation de la force du mot de passe
+  if (actualPassword.length < 6) {
+    console.log('Mot de passe trop court');
+    return res.status(400).json({ message: `Le mot de passe doit contenir au moins 6 caractères` });
+  }
+
+  try {
+    console.log('Hashage du token reçu depuis l\'URL...');
+    const resetTokenHash = crypto
+      .createHash("sha256")
+      .update(token)
+      .digest("hex");
+    
+    console.log('Token original:', token.substring(0, 20) + '...');
+    console.log('Token hashé pour recherche:', resetTokenHash.substring(0, 20) + '...');
+
+    console.log('Recherche utilisateur avec token hashé...');
+    const user = await User.findOne({
+      resetToken: resetTokenHash,
+      resetTokenExpiration: { $gt: Date.now() },
+    });
+
+    if (!user) {
+      console.log('Aucun utilisateur trouvé avec ce token ou token expiré');
+      
+      // Debug: chercher si le token existe même s'il est expiré
+      const expiredUser = await User.findOne({ resetToken: resetTokenHash });
+      if (expiredUser) {
+        console.log('Token trouvé mais expiré pour:', expiredUser.email);
+        console.log('Expiration:', new Date(expiredUser.resetTokenExpiration));
+        console.log('Maintenant:', new Date());
+        return res.status(400).json({ message: `Token expiré` });
+      } else {
+        console.log('Token totalement introuvable en DB');
+      }
+      
+      return res.status(400).json({ message: `Token invalide ou expiré` });
+    }
+
+    console.log('Utilisateur trouvé:', user.email);
+    console.log('Token valide, mise à jour du mot de passe...');
+
+    // Hasher le nouveau mot de passe
+    const hashedPassword = await bcrypt.hash(actualPassword, 12);
+    user.password = hashedPassword;
+    user.resetToken = undefined;
+    user.resetTokenExpiration = undefined;
+
+    await user.save();
+    
+    console.log(`Mot de passe réinitialisé avec succès pour: ${user.email}`);
+    
+    res.json({ 
+      success: true,
+      message: `Mot de passe réinitialisé avec succès` 
+    });
+  } catch (error) {
+    console.error("Erreur lors de la réinitialisation:", error);
+    res.status(500).json({ 
+      success: false,
+      message: `Erreur lors de la réinitialisation` 
+    });
+  }
+}
+
+async function logout(req, res) {
+  try {
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+    });
+
+    res.status(200).json({ message: `Déconnecté avec succès` });
+  } catch (error) {
+    console.error(`Erreur lors de déconnexion`, error);
+    res.status(500).json({ message: `Erreur lors de la déconnexion` });
+  }
+}
+
+// Vérification du compte via un token envoyé par mail
+async function verifyEmail(req, res) {
+  try {
+    const { token } = req.params;
+    const decoded = jwt.verify(token, JWT_SECRET);
+
+    if (!decoded.id) {
+      return res.status(400).json({ message: `Token invalide` });
+    }
+
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      return res.status(400).json({ message: `Utilisateur introuvable` });
+    }
+
+    if (user.isVerified) {
+      return res.status(400).json({ message: `Compte déjà vérifié` });
+    }
+
+    user.isVerified = true;
+    await user.save();
+    
+    console.log(`Compte vérifié pour: ${user.email}`);
+    res.json({ message: `Compte vérifié avec succès` });
+  } catch (error) {
+    console.error(`Erreur vérification email:`, error);
+    
+    // Messages d'erreur plus spécifiques
+    if (error.name === 'TokenExpiredError') {
+      return res.status(400).json({ message: `Lien de vérification expiré` });
+    }
+    
+    res.status(400).json({ message: `Token invalide ou expiré` });
+  }
+}
+
+async function resendVerificationEmail(req, res) {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ message: "Email requis." });
+  }
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "Utilisateur introuvable." });
+    }
+
+    if (user.isVerified) {
+      return res.status(400).json({ message: "Ce compte est déjà vérifié." });
+    }
+
+    const verificationToken = jwt.sign({ id: user._id }, JWT_SECRET, {
+      expiresIn: "1d",
+    });
+
+    const verificationUrl = `http://localhost:5173/api/verify/${verificationToken}`;
+
+    await sendMail({
+      to: user.email,
+      subject: "Nouveau lien de vérification",
+      html: `Bonjour ${user.username},<br><br>Voici un nouveau lien pour vérifier votre compte : <a href="${verificationUrl}">Vérifier mon compte</a><br><br>Ce lien est valable 24h.`,
+    });
+
+    res.json({
+      message: "Un nouveau lien de vérification a été envoyé à votre email.",
+    });
+  } catch (error) {
+    console.error("Erreur lors du renvoi de l'email :", error);
+    res
+      .status(500)
+      .json({ message: "Erreur lors de l'envoi du lien de vérification." });
+  }
+}
+
+module.exports = {
+  register,
+  login,
+  logout,
+  me,
+  requestPasswordReset,
+  resetPassword,
+  verifyEmail,
+  resendVerificationEmail,
+};
+</code></pre>
+            </section>
+
+            <!-- Slide 15 : Middleware de Sécurité -->
+            <section>
+                <h2>Middleware de Sécurité</h2>
+                <pre style="font-size: 0.5em;"><code class="language-javascript">// middleware/authMiddleware.js
+const jwt = require("jsonwebtoken");
+const User = require("../models/Users");
+const dotenv = require("dotenv");
+dotenv.config();
+
+const JWT_SECRET = process.env.JWT_SECRET;
+
+// Middleware pour protéger les routes (authentification)
+const protect = async (req, res, next) => {
+  let token;
+
+  // Vérifier le token dans les cookies
+  if (req.cookies && req.cookies.token) {
+    token = req.cookies.token;
+  }
+  // Vérifier le token dans l'en-tête Authorization
+  else if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    token = req.headers.authorization.split(' ')[1];
+  }
+
+  if (!token) {
+    return res.status(401).json({
+      success: false,
+      message: "Authentification échouée, token manquant"
+    });
+  }
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    console.log("🔍 Token décodé:", decoded);
+
+    const user = await User.findByIdPublic(decoded.id);
+
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        message: "Utilisateur non trouvé"
+      });
+    }
+
+    if (!user.isVerified) {
+      return res.status(401).json({
+        success: false,
+        message: "Compte non vérifié"
+      });
+    }
+
+    req.user = {
+      id: user._id.toString(),
+      username: user.username,
+      email: user.email,
+      role: user.role,
+      isVerified: user.isVerified,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt
+    };
+
+    console.log("✅ Utilisateur authentifié:", req.user.username);
+    next();
+  } catch (error) {
+    console.error("❌ Erreur de vérification du token:", error.message);
+
+    if (error.name === 'TokenExpiredError') {
+      return res.status(401).json({ success: false, message: "Token expiré" });
+    }
+
+    if (error.name === 'JsonWebTokenError') {
+      return res.status(401).json({ success: false, message: "Token invalide" });
+    }
+
+    return res.status(401).json({ success: false, message: "Token expiré ou invalide" });
+  }
+};
+
+// Middleware pour la gestion des rôles utilisateur
+const authorize = (...roles) => (req, res, next) => {
+  console.log("🛡️ authorize() exécuté | rôle actuel:", req.user?.role, "| rôles autorisés:", roles);
+
+  if (!req.user) {
+    return res.status(401).json({
+      success: false,
+      message: "Non authentifié"
+    });
+  }
+
+  if (!roles.includes(req.user.role)) {
+    return res.status(403).json({
+      success: false,
+      message: "Accès refusé. Rôle insuffisant"
+    });
+  }
+
+  next();
+};
+
+// Middleware optionnel pour récupérer l'utilisateur si token présent
+const optionalAuth = async (req, res, next) => {
+  let token;
+
+  if (req.cookies && req.cookies.token) {
+    token = req.cookies.token;
+  } else if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    token = req.headers.authorization.split(' ')[1];
+  }
+
+  if (!token) return next();
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    let user;
+
+    if (User.findByIdPublic) {
+      user = await User.findByIdPublic(decoded.id);
+    } else {
+      user = await User.findById(decoded.id).select('-password -resetToken -resetTokenExpiration');
+    }
+
+    if (user && user.isVerified) {
+      req.user = {
+        id: user._id.toString(),
+        username: user.username,
+        email: user.email,
+        role: user.role,
+        isVerified: user.isVerified,
+        createdAt: user.createdAt,
+        updatedAt: user.updatedAt
+      };
+    }
+  } catch (error) {
+    console.log("Token optionnel invalide, continuons sans auth:", error.message);
+  }
+
+  next();
+};
+
+module.exports = { protect, authorize, optionalAuth };
+</code></pre>
+                <p><strong>Utilisation :</strong> <code>router.post('/quiz', protect, authorize('admin'), createQuiz);</code></p>
+            </section>
+
+            <!-- Slide 16 : Protection Multi-Niveaux -->
+            <section>
+                <h2>Protection Multi-Niveaux</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; font-size: 0.8em;">
+                    <div style="margin-top: 1.5rem;">
+                        <h3>Headers HTTP Sécurisés</h3>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <h3>Rate Limiting</h3>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <h3>Validation</h3>
+                    </div>
+                </div>
+            </section>
+
+           <!-- Slide 17 : Résolution Problème - ProtectedRoute -->
+<section>
+    <h2>Résolution Problème - ProtectedRoute</h2>
+    <div style="font-size: 0.6em;">
+        <p><strong>SOLUTION :</strong> Composant ProtectedRoute (React)</p>
+        <pre style="font-size: 0.5em;"><code class="language-jsx">// ProtectedRoutes.jsx
+import React, { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
+
+const ProtectedRoute = ({ children, requiredRole }) =&gt; {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() =&gt; {
+    const checkAuth = async () =&gt; {
+      try {
+        const response = await fetch('http://localhost:3001/api/profil', {
+          credentials: 'include',
+        });
+
+        if (response.ok) {
+          const res = await response.json();
+          console.log(&quot;📡 R&eacute;ponse API:&quot;, res);
+
+          if (res &amp;&amp; res.data &amp;&amp; res.data.user) {
+            // ✅ on enregistre seulement l'utilisateur
+            setUser(res.data.user);
+          } else {
+            throw new Error(&quot;Structure de r&eacute;ponse inattendue&quot;);
+          }
+        } else if (response.status === 401) {
+          console.warn(&quot;❌ Non authentifi&eacute;&quot;);
+          setUser(null);
+        } else {
+          throw new Error(`Erreur serveur: ${response.status}`);
+        }
+      } catch (err) {
+        console.error(&quot;💥 Erreur r&eacute;seau/auth:&quot;, err);
+        setError(err.message);
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+  if (loading) {
+    return (
+      &lt;div className=&quot;auth-loading&quot;&gt;
+        &lt;div className=&quot;loading-spinner&quot;&gt;&lt;/div&gt;
+        &lt;p&gt;V&eacute;rification des permissions...&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+
+  if (error) {
+    return (
+      &lt;div className=&quot;auth-error&quot;&gt;
+        &lt;h2&gt;Erreur&lt;/h2&gt;
+        &lt;p&gt;{error}&lt;/p&gt;
+        &lt;button onClick={() =&gt; window.location.reload()}&gt;
+          R&eacute;essayer
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+
+  if (!user) {
+    return &lt;Navigate to=&quot;/login&quot; replace /&gt;;
+  }
+
+  console.log(&quot;👤 Utilisateur charg&eacute; dans ProtectedRoute:&quot;, user);
+
+  if (requiredRole &amp;&amp; user.role !== requiredRole) {
+    console.warn(`🚫 Acc&egrave;s refus&eacute; : r&ocirc;le requis = ${requiredRole}, r&ocirc;le utilisateur = ${user.role}`);
+    return (
+      &lt;div className=&quot;access-denied&quot;&gt;
+        &lt;h1&gt;Acc&egrave;s refus&eacute;&lt;/h1&gt;
+        &lt;p&gt;Vous n'avez pas les permissions n&eacute;cessaires pour acc&eacute;der &agrave; cette page.&lt;/p&gt;
+        &lt;p&gt;🔑 R&ocirc;le requis : &lt;b&gt;{requiredRole}&lt;/b&gt;&lt;/p&gt;
+        &lt;p&gt;👤 Votre r&ocirc;le : &lt;b&gt;{user.role || &quot;non d&eacute;fini&quot;}&lt;/b&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+
+  console.log(`✅ Acc&egrave;s accord&eacute; : ${user.username} (${user.role})`);
+  return children;
+};
+
+export default ProtectedRoute;</code></pre>
+    </div>
+</section>
+
+            <!-- Slide 18 : Jeu d'Essai - Authentification -->
+            <section>
+                <h2>Jeu d'Essai - Authentification</h2>
+                <table style="font-size: 0.6em;">
+                    <thead>
+                        <tr>
+                            <th>Données en entrée</th>
+                            <th>Données attendues</th>
+                            <th>Obtenues</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>email: valid@test.com<br>password: Test123!</td>
+                            <td>• Token JWT<br>• Status 200<br>• User sans pwd</td>
+                            <td>Token généré<br>Status 200<br>User.toJSON</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>email: invalid<br>password: wrong</td>
+                            <td>• Status 401<br>• Message erreur générique</td>
+                            <td>Status 401<br>"Identif. invalides"</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>email: (vide)<br>password: Test123!</td>
+                            <td>• Status 400<br>• Validation error</td>
+                            <td>Status 400<br>"Champs requis"</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Token expiré dans requête protégée</td>
+                            <td>• Status 401<br>• "Token invalide"</td>
+                            <td>Status 401<br>Message OK</td>
+                            <td>✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>ANALYSE :</strong> Tous les cas passent ✓ Pas d'écarts</p>
+            </section>
+
+            <!-- Slide 19 : Veille Sécurité -->
+            <section>
+                <h2>Veille Sécurité - Vulnérabilités</h2>
+                <div style="font-size: 0.65em;">
+                    <h3>VULNÉRABILITÉ 1 : JWT sans expiration</h3>
+                    <hr>
+                    <h3>VULNÉRABILITÉ 2 : Injection NoSQL</h3>
+                </div>
+            </section>
+
+            <!-- Slide 20 : Gestion de Projet -->
+<section>
+    <h2>Gestion de Projet</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+            <h3>Méthodologie Agile (MVP)</h3>
+            <ul style="font-size: 0.6em;">
+                <li>Fondation (3 sem) → Administration (2 sem)</li>
+                <li>Inclusivité (2 sem) → Finalisation (1 sem)</li>
+            </ul>
+            <p><strong>Résultat : 85% MVP complété</strong></p>
+        </div>
+        <div>
+            <h3>Outils</h3>
+            <ul>
+                <li>GitHub (100+ commits)</li>
+                <li>Notion (backlog/sprints)</li>
+                <li>Postman (tests API)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+            <!-- Slide 21 : Objectifs Atteints -->
+<section>
+    <h2>Objectifs Atteints</h2>
+    <ul>
+        <li>✅ MVP fonctionnel & déployable</li>
+        <li>✅ Architecture MERN moderne</li>
+        <li>✅ Sécurité renforcée & Accessibilité WCAG 2.1 AA</li>
+        <li>✅ Interface responsive & Documentation complète</li>
+    </ul>
+</section>
+
+            <!-- Slide 22 : Points Forts & Difficultés -->
+<section>
+    <h2>Points Forts & Difficultés</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+            <h3>Points Forts</h3>
+            <ul>
+                <li>Accessibilité (WCAG 2.1 AA)</li>
+                <li>Code modulaire & Tests complets</li>
+                <li>Sécurité multicouche</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Difficultés</h3>
+            <ul>
+                <li>Tokens reset → SHA-256</li>
+                <li>Performance MongoDB → Indexes</li>
+                <li>State complexe → useReducer</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+            <!-- Slide 23 : Couverture Référentiel -->
+<section>
+    <h2>Couverture du Référentiel</h2>
+    <table style="font-size: 0.5em;">
+        <thead>
+            <tr>
+                <th>Bloc</th>
+                <th>Compétences</th>
+                <th>Application</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3"><strong>CCP1</strong><br>Front-end</td>
+                <td>Maquetter une application</td>
+                <td>Figma + Wireframes</td>
+            </tr>
+            <tr>
+                <td>Réaliser une interface utilisateur web</td>
+                <td>React + Hooks + Responsive</td>
+            </tr>
+            <tr>
+                <td>Développer une interface utilisateur web dynamique</td>
+                <td>React Router + Axios + State Management</td>
+            </tr>
+            <tr>
+                <td rowspan="4"><strong>CCP2</strong><br>Back-end</td>
+                <td>Créer une base de données</td>
+                <td>MongoDB + Mongoose</td>
+            </tr>
+            <tr>
+                <td>Développer les composants d'accès aux données</td>
+                <td>Models + Controllers</td>
+            </tr>
+            <tr>
+                <td>Développer la partie back-end d'une application web</td>
+                <td>API REST Express + Middleware</td>
+            </tr>
+            <tr>
+                <td>Élaborer et mettre en œuvre des composants de sécurité</td>
+                <td>JWT + Bcrypt + RBAC + Rate Limiting</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+            <!-- Slide 24 : Perspectives -->
+            <section>
+                <h2>Perspectives d'Évolution</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; font-size: 0.85em;">
+                    <div>
+                        <h3>Court terme</h3>
+                    </div>
+                    <div>
+                        <h3>Moyen terme</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 25 : Merci -->
+        <section>
+            <div style="text-align: center; padding: 3rem;">
+                <h1>ALÉA</h1>
+                <h3>"Quand le savoir rencontre l'accessibilité"</h3>
+                <br>
+                <br>
+                <p style="font-size: 1.5em;">Merci de votre attention</p>
+                <br>
+                <p style="font-size: 1.2em;">Questions ?</p>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        transition: 'slide',
+        transitionSpeed: 'default',
+        controls: true,
+        progress: true,
+        center: false,
+        slideNumber: 'c/t',
+        width: 1280,
+        height: 720,
+        margin: 0.04
+    });
+</script>
+</body>
 </html>
