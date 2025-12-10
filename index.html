@@ -6,6 +6,7 @@
     <title>Aléa - Présentation Titre Professionnel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,7 +32,6 @@
                         <ul>
                             <li>Développeur web junior</li>
                             <li>Formation AFEC</li>
-                            <li>Spécialisations : React, Node.js, Accessibilité</li>
                         </ul>
                     </div>
                     <div>
@@ -43,6 +43,11 @@
                         </ul>
                     </div>
                 </div>
+                <aside class="notes">
+                  <ul>
+                    <li>App en marque blanche, afin d’en faire des déclinaisons de quiz selon les domaines/les demandes</li>
+                  </ul>
+                </aside>
             </section>
 
             <!-- Slide 3 : Expression des Besoins -->
@@ -51,19 +56,19 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
                     <div>
                         <h3>🎯 UX Fluide</h3>
-                        <p>Interface React moderne et responsive</p>
+                        <br>
                     </div>
                     <div>
                         <h3>🔒 Sécurité</h3>
-                        <p>JWT, RBAC, protection données</p>
+                        <br>
                     </div>
                     <div>
                         <h3>♿ Accessible</h3>
-                        <p>WCAG 2.1 niveau AA</p>
+                        <br>
                     </div>
                     <div>
                         <h3>📈 Évolutif</h3>
-                        <p>Architecture modulaire</p>
+                        <br>
                     </div>
                 </div>
                 <table>
@@ -82,6 +87,14 @@
                         </tr>
                     </tbody>
                 </table>
+                  <aside class="notes">
+                    <ul>
+                      <li>UX Fluide avec une interface React</li>
+                      <li>Sécurité solide via JWT, RBAC et protection de données</li>
+                      <li>Application accessible conforme WCAG 2.1 AA</li>
+                      <li>Solution évolutive basée sur une architecture modulaire</li>
+                    </ul>   
+                  </aside>
             </section>
 
             <!-- Slide 4 : Maquettes -->
@@ -107,7 +120,7 @@
             <section>
                 <h2>Schéma de Navigation</h2>
                 <div style="text-align: center; padding: 2rem;">
-                    <pre style="color: var(--alea-yellow-dark); font-size: 0.8em; text-align: left; display: inline-block;">
+                    <pre style="color: var(--alea-yellow); font-size: 0.8em; text-align: left; display: inline-block;">
 Accueil → Login → Dashboard → Quiz → Résultats
                       ↓
                   Admin Panel
@@ -142,6 +155,12 @@ Accueil → Login → Dashboard → Quiz → Résultats
                     </div>
                 </div>
                 <p style="text-align: center; margin-top: 1.5rem;"><strong>User → React → API → MongoDB</strong></p>
+                <aside class="notes">
+                    <ul>
+                      <li><strong>FRONT</strong><br>React -> Interface fluide | React Router -> Navigation | Axios -> Communication API</li>
+                      <li><strong>BACK</strong><br>Node.js -> Serveur | Express -> Routes |<br> MongoDB -> DB | JWT -> Auth sécurisé | Bcrypt -> Hash mot de passe</li>
+                    </ul>   
+                  </aside>
             </section>
 
             <!-- Slide 7 : Interface Quiz - Desktop & Mobile -->
@@ -201,6 +220,12 @@ return (
 );
                 </code></pre>
                 <p><strong>Sécurité :</strong> Échappement XSS automatique avec React</p>
+                <aside class="notes">
+                    <ul>
+                      <li><strong>EN-TETE</strong><br>Progression / N° de question / Apercu du score</li>
+                      <li><strong>MID</strong><br>Question en cours / Options de réponses</li>
+                    </ul>   
+                  </aside>
             </section>
 
             <!-- Slide 9 : Code Front - Logique React -->
@@ -266,6 +291,13 @@ const submitAnswer = (answersToSubmit = selectedAnswers) =&gt; {
 };
                 </code></pre>
                 <p><strong>Argumentaire :</strong> Gestion d'état avec hooks, appel API sécurisé</p>
+                <aside class="notes">
+                    <ul>
+                      <li><strong>Hooks d'états</strong><br>Navigation entre questions / Calcul du score / Affichage résultat / Gestions des réponses séléctionnées</li>
+                      <li><strong>handleAnswerSelection</strong><br>Différencie les questions simples des questions a choix multiples</li>
+                      <li><strong>submitAnswer</strong><br>Validité de la réponse / Enregistre l'historique / Déclenche la progression dans le quiz</li>
+                    </ul>   
+                  </aside>
             </section>
 
             <!-- Slide 10 : Menu Accessibilité -->
@@ -303,7 +335,7 @@ const submitAnswer = (answersToSubmit = selectedAnswers) =&gt; {
 
             <!-- Slide 11 : Interface Admin -->
             <section>
-                <h2>Interface Administration ( UTILISATEURS )</h2>
+                <h2>Interface Administration (UTILISATEURS)</h2>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                     <div>
                         <div style="border: 2px solid var(--alea-yellow); padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -319,7 +351,7 @@ const submitAnswer = (answersToSubmit = selectedAnswers) =&gt; {
             </section>
 
             <section>
-                <h2>Interface Administration ( QUESTIONS )</h2>
+                <h2>Interface Administration (QUESTIONS)</h2>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                     <div>
                         <div style="border: 2px solid var(--alea-yellow); padding: 2rem; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -875,6 +907,15 @@ module.exports = {
   resendVerificationEmail,
 };
 </code></pre>
+                  <aside class="notes">
+                    <ul>
+                      <li>Valide et sécurise les données envoyées par user</li>
+                      <li>Hash mdp avec Bcrytp</li>
+                      <li>Génère et vérifie les token JWT pour l'auth</li>
+                      <li>Envoie d'emails sécurisés pour la vérification de compte OU mdp oublié</li>
+                      <li>Gestion robuste des erreurs et des accès non autorisés</li>
+                    </ul>   
+                  </aside>
             </section>
 
             <!-- Slide 15 : Middleware de Sécurité -->
@@ -1018,22 +1059,49 @@ const optionalAuth = async (req, res, next) => {
 
 module.exports = { protect, authorize, optionalAuth };
 </code></pre>
-                <p><strong>Utilisation :</strong> <code>router.post('/quiz', protect, authorize('admin'), createQuiz);</code></p>
+                <aside class="notes">
+                    <ul>
+                      <li><strong>protect</strong><br>Vérifie la présence et la validité du token JWT</li>
+                      <li><strong>authorize</strong><br>Gère les permissions <br><i>Création d'un quiz réservés aux admins</i></li>
+                      <li><strong>optionalAuth</strong><br>Décode le token <br><i>Pages publiques pouvant afficher + d'info si user log</i></li>
+                    </ul>   
+                </aside>
             </section>
 
             <!-- Slide 16 : Protection Multi-Niveaux -->
             <section>
                 <h2>Protection Multi-Niveaux</h2>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; font-size: 0.8em;">
-                    <div style="margin-top: 1.5rem;">
-                        <h3>Headers HTTP Sécurisés</h3>
-                    </div>
-                    <div style="margin-top: 1.5rem;">
-                        <h3>Rate Limiting</h3>
-                    </div>
-                    <div style="margin-top: 1.5rem;">
-                        <h3>Validation</h3>
-                    </div>
+                    <h3>🛡️ Headers HTTP de Sécurité</h3>
+                      <aside class="notes">
+                        <h3>1</h3>
+                        <p><strong>X-Content-Type-Options</strong></p>
+                        <p><strong>X-Frame-Options</strong></p>
+                        <p><strong>X-XSS-Protection</strong></p>
+                      </aside>
+                        <h3>⏱️ Rate Limiting</h3>
+                      <aside class="notes">
+                            <h3>2</h3>  
+                            <p><strong>100 requêtes / 15 min</strong> - Limiteur global</p>
+                            <p><strong>10 requêtes / 15 min</strong> - Routes authentification (protection brute force)</p>
+                            <p><strong>50 requêtes / 15 min</strong> - Routes API générales</p>
+                            <p><strong>200 requêtes / 15 min</strong> - Routes admin</p>
+                      </aside>
+                        <h3>🌐 Configuration CORS</h3>
+                      <aside class="notes">
+                            <h3>3</h3>
+                            <p>Accepte uniquement les origines autorisées (localhost en dev, domaine de production). Autorise les cookies pour authentification JWT.</p>
+                      </aside>
+                        <h3>✅ Validation des entrées</h3>
+                        <aside class="notes">
+                            <h4>4</h4>
+                            <p>Vérification du format ObjectId MongoDB</p>
+                            <p>Sanitization contre injections NoSQL</p>
+                            <p>Validation stricte des emails</p>
+                            <p>Limitation de taille des payloads (10MB max)</p>
+                            <p>Vérification des énumérations</p>
+                            <p>Conversion et typage stricts</p>
+                        </aside>
                 </div>
             </section>
 
@@ -1042,7 +1110,7 @@ module.exports = { protect, authorize, optionalAuth };
     <h2>Résolution Problème - ProtectedRoute</h2>
     <div style="font-size: 0.6em;">
         <p><strong>SOLUTION :</strong> Composant ProtectedRoute (React)</p>
-        <pre style="font-size: 0.5em;"><code class="language-jsx">// ProtectedRoutes.jsx
+        <pre style="font-size: 0.8em;"><code class="language-jsx">// ProtectedRoutes.jsx
 import React, { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 
@@ -1173,17 +1241,62 @@ export default ProtectedRoute;</code></pre>
                     </tbody>
                 </table>
                 <p><strong>ANALYSE :</strong> Tous les cas passent ✓ Pas d'écarts</p>
+                <aside class="notes">
+                    <ul>
+                      <li><strong>Connexion valide -></strong> token + statut 200</li>
+                      <li><strong>Identifiants invalides -></strong> statut 401 + message génériques</li>
+                      <li><strong>Champs manquants -></strong> statut 400</li>
+                      <li><strong>Token expiré -></strong> refus d'accès avec le bon message</li>
+                    </ul>   
+                </aside>
             </section>
 
             <!-- Slide 19 : Veille Sécurité -->
-            <section>
-                <h2>Veille Sécurité - Vulnérabilités</h2>
-                <div style="font-size: 0.65em;">
-                    <h3>VULNÉRABILITÉ 1 : JWT sans expiration</h3>
-                    <hr>
-                    <h3>VULNÉRABILITÉ 2 : Injection NoSQL</h3>
-                </div>
-            </section>
+            <section style="font-size: 0.65em;">
+    <h2>Veille Sécurité — Vulnérabilités</h2>
+
+    <!-- Slide 1 : Vulnérabilité 1 -->
+    <section>
+        <h3>VULNÉRABILITÉ 1 : Protection des Routes Administrateur</h3>
+        <h3>❌ Problème</h4>
+        <p>L’interface admin s'affichait avant la vérification du rôle.</p>
+        <ul>
+            <li>Exposition de la page admin</li>
+            <li>Attempt d’actions côté client</li>
+            <li>Révélation structure & endpoints</li>
+        </ul>
+        <aside class="notes">
+          <h4>✅ Solution</h4>
+        <p>Composant <strong>ProtectedRoute</strong> :</p>
+        <ul>
+            <li>Appel <code>/api/me</code> pour vérifier l'utilisateur</li>
+            <li>Contrôle JWT + rôle</li>
+            <li>Redirection automatique</li>
+        </ul>   
+        </aside>
+    </section>
+
+    <!-- Slide 2 : Vulnérabilité 2 -->
+    <section>
+        <h3>VULNÉRABILITÉ 2 : Sécurité des Tokens de Réinitialisation</h3>
+        <h3>❌ Problème</h4>
+        <p>Le token devait être sécurisé, unique, non prédictible et temporaire.</p>
+        <ul>
+            <li>Tokens prévisibles</li>
+            <li>Stockage en clair</li>
+            <li>Pas d'expiration</li>
+        </ul>
+        <aside class="notes">
+          <h4>✅ Solution</h4>
+        <ul>
+            <li><code>crypto.randomBytes(32)</code> : token 256 bits</li>
+            <li>Stockage hashé SHA-256 (jamais en clair)</li>
+            <li>Expiration 1h + usage unique</li>
+            <li>Comparaison hash/token</li>
+        </ul>  
+        </aside>
+    </section>
+</section>
 
             <!-- Slide 20 : Gestion de Projet -->
 <section>
@@ -1195,7 +1308,6 @@ export default ProtectedRoute;</code></pre>
                 <li>Fondation (3 sem) → Administration (2 sem)</li>
                 <li>Inclusivité (2 sem) → Finalisation (1 sem)</li>
             </ul>
-            <p><strong>Résultat : 85% MVP complété</strong></p>
         </div>
         <div>
             <h3>Outils</h3>
@@ -1289,17 +1401,29 @@ export default ProtectedRoute;</code></pre>
 </section>
 
             <!-- Slide 24 : Perspectives -->
-            <section>
-                <h2>Perspectives d'Évolution</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; font-size: 0.85em;">
-                    <div>
-                        <h3>Court terme</h3>
-                    </div>
-                    <div>
-                        <h3>Moyen terme</h3>
-                    </div>
-                </div>
-            </section>
+<section>
+    <h2>Perspectives d'Évolution</h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; font-size: 0.85em;">
+
+        <!-- Court Terme -->
+        <div>
+            <h3>Court terme</h3>
+            <ul>
+              <li>Badges & Classement</li>
+              <li>Tests de sécurité automatisés</li>
+            </ul>
+        </div>
+
+        <!-- Moyen Terme -->
+        <div>
+            <h3>Moyen terme</h3>
+            <ul>
+              <li>Ajout IA</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
             <!-- Slide 25 : Merci -->
         <section>
@@ -1317,7 +1441,9 @@ export default ProtectedRoute;</code></pre>
     </div>
 </div>
 
+<script src="plugin/highlight/highlight.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
 <script>
     Reveal.initialize({
         hash: true,
@@ -1329,7 +1455,11 @@ export default ProtectedRoute;</code></pre>
         slideNumber: 'c/t',
         width: 1280,
         height: 720,
-        margin: 0.04
+        margin: 0.04,
+        
+        // Active le mode speaker notes avec chronomètre
+        plugins: [ RevealNotes, RevealHighlight],
+        
     });
 </script>
 </body>
