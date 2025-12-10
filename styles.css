@@ -154,7 +154,7 @@
 .reveal code {
     background-color: var(--alea-dark);
     padding: 0.2em 0.4em;
-    border-radius: 4px;
+    border-radius: 10px;
     font-family: 'Courier New', monospace;
 }
 
@@ -163,7 +163,7 @@
 .reveal li code {
     background-color: var(--alea-dark);
     padding: 0.2em 0.4em;
-    border-radius: 4px;
+    border-radius: 10px;
     font-family: 'Courier New', monospace;
 }
 
